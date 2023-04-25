@@ -1,20 +1,23 @@
-//consum api from weatherapi-com.p.rapidapi.com
-//https://rapidapi.com/community/api/open-weather-map/endpoints
 
-fetch("https://weatherapi-com.p.rapidapi.com/forecast.json?q=${cityName}&days=3", {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "weatherapi-com.p.rapidapi.com",
-		"x-rapidapi-key": process.env.API_KEY // Ini adalah variable environment
-	}
-})
-.then(response => {
-	console.log(response.json());
-})
-.catch(err => {
-	console.error(err);
-});
 
+const getWeatherForecast  = async (cityName) => {
+  try{
+    const response = await fetch(`https://weatherapi-com.p.rapidapi.com/forecast.json?q=${cityName}&days=3`, {
+        method: "GET",
+        headers: {
+          "x-rapidapi-host": "weatherapi-com.p.rapidapi.com",
+          "x-rapidapi-key":"c7b1fa5169msh503a7af3c1508bdp1328c9jsn255b5a063832"
+          //
+        },
+      });
+      const data = await response.json();
+      console.log(data);
+      return data;
+    } catch (error) {
+      console.log(error);
+      return;
+    }
+  }
   const displayCityName = (weatherData) => {
     const cityNameDiv = document.getElementById("city-description");
     const cityName = weatherData.location.name;
@@ -40,6 +43,7 @@ fetch("https://weatherapi-com.p.rapidapi.com/forecast.json?q=${cityName}&days=3"
         min_temp: forecasts[i].day.mintemp_c,
         avg_humidity: forecasts[i].day.avghumidity
       }
+      
 
       const element = `
         <div class="weather-container">
