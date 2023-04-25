@@ -1,3 +1,13 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+button{
+  cursor: pointer;
+  size: 20px;
+}
+
 body {
     margin: 0;
     background: #f1f8ff;
@@ -32,7 +42,7 @@ body {
   
   .search-field button {
     padding: 10px;
-    width: 12%;
+    width: 40%;
     background-color: #d6eafc;
     border: 1px solid #79a0c4;
     color: #606060;
