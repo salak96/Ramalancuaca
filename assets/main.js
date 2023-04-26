@@ -11,7 +11,6 @@ const getWeatherForecast  = async (cityName) => {
         },
       });
       const data = await response.json();
-      console.log(data);
       return data;
     } catch (error) {
       console.log(error);
@@ -25,8 +24,15 @@ const getWeatherForecast  = async (cityName) => {
     const element = `<h2>Showing the weather of ${cityName}, ${countryName}<h2>`;
     cityNameDiv.innerHTML = element;
   }
-
-
+  const displayCurrentWeather = (weatherData) => {
+    const currentWeather = document.getElementById("current-weather");
+    currentWeather.innerHTML = weatherData.current.cloud;
+  console.log(weatherData.current.condition.icon);  
+    const icon= document.createElement("img")
+    icon.src = weatherData.current.condition.icon;
+    currentWeather.appendChild(icon);
+} 
+  
   const displayWeatherForecast = (weatherData) => {
     const forecastDiv = document.getElementById("weather-forecast");
     forecasts = weatherData.forecast.forecastday;
