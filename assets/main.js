@@ -1,5 +1,6 @@
 //import dotenv from "dotenv";
-import WEATHER_API_KEY from "./apikey";
+// import WEATHER_API_KEY from "./apikey";
+
 const getWeatherForecast  = async (cityName) => {
   try{
     const response = await fetch(`https://weatherapi-com.p.rapidapi.com/forecast.json?q=${cityName}&days=3`, {
