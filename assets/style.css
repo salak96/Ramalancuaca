@@ -81,3 +81,25 @@ body {
   .weather-image {
     width: 30%;
   }
+  .cuaca{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;1
+
+  }
+.current-weather{
+    //card
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 0 auto;
+    width: 25%;
+    border: 1px solid #79a0c4;
+    color: black;
+    background-color: #d6eafc;
+    font-size: 40px;
+  }
